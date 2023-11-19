@@ -88,3 +88,12 @@ body {
 .game-info {
   margin-left: 20px;
 }
+
+.game-info li {
+  height: 24px;
+  line-height: 24px;
+}
+
+.game-info li, .game-info button {
+  font-size: 13px;
+}
