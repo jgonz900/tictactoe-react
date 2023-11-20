@@ -101,3 +101,7 @@ body {
 .game-info > ul {
   margin-top: 5px;
 }
+
+.winning-square {
+  background-color: #FFF000;
+}
