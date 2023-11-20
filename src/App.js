@@ -82,7 +82,9 @@ export default function Game() {
     if (move === 0) {
       description += 'game start';
     } else {
-      description += 'move #' + move; 
+      let squaresPrev = history[move-1];
+      let coords = getCoordinatesOfFirstDifferingSquare(squares, squaresPrev);
+      description += `move #${move} at (${coords[0] + 1}, ${coords[1] + 1})`; 
     }
     if (move === currentMove) {
       entry = description;
@@ -133,4 +135,16 @@ function getWinningSquares(squares) {
     }
   }
   return [];
+}
+
+function getCoordinatesOfFirstDifferingSquare(squares1, squares2) {
+    for(let row = 0; row < 3; row++) {
+      for(let col = 0; col < 3; col++) {
+        let i = row * 3 + col;
+        if (squares1[i] !== squares2[i]) {
+          return [row, col];
+        }
+      }
+    }
+  return null;
 }
